@@ -1,4 +1,0 @@
-local:
-  port: 50054
-grpc:
-  pay_addr: "pay:50053"
