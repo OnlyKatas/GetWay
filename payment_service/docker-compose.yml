@@ -1,0 +1,26 @@
+version: '3'
+services:
+  pay:
+    build: .
+    container_name: pay
+    ports:
+      - "50053:50053"
+    networks:
+      - my_network
+
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
+    container_name: dbpay
+    ports:
+      - "5433:5432"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    external: true

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package session;
+
+
+option go_package = "frgaed.session.v1";
+
+service Session {
+  rpc SendSession (SendSessionRequest) returns (SendSessionResponse);
+}
+
+message SendSessionRequest {
+  int64 id = 1;
+  int64 user_id =3;
+  string user_uuid = 4;
+  int64 amount =5;
+  int64 status = 6;
+}
+
+message SendSessionResponse {
+  string req = 1;
+}
+

@@ -1,0 +1,4 @@
+local:
+  port: 50051
+user_client:
+  address: "user:50052"

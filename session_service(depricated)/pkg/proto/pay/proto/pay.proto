@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package pay;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "frgaed.pay.v1";
+
+service Pay {
+  rpc Deposit (DepositRequest) returns (DepositResponse);
+  rpc Create (CreateRequest) returns (google.protobuf.Empty);
+  rpc GetSessionStatus (google.protobuf.Empty) returns (GetSessionStatusResponse);
+}
+
+message DepositRequest {
+  int64 user_id = 1;
+  string uuid = 2;
+  int64 amount = 3;
+}
+
+message DepositResponse {
+  string req = 1;
+}
+
+message CreateRequest {
+  int64 user_id = 1;
+  string uuid = 2;
+}
+
+message GetSessionStatusResponse {
+  repeated Session Sessions = 1;
+}
+
+message Session {
+  int64 id = 1;
+  string uuid =2;
+  int64 user_id =3;
+  string user_uuid = 4;
+  int64 amount =5;
+  int64 status = 6;
+}

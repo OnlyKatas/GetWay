@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package pay;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "frgaed.pay.v1";
+
+service Pay {
+  rpc Deposit (DepositRequest) returns (DepositResponse);
+  rpc Create (CreateRequest) returns (google.protobuf.Empty);
+}
+
+message DepositRequest {
+  int64 user_id = 1;
+  string uuid = 2;
+  int64 amount = 3;
+}
+
+message DepositResponse {
+  string req = 1;
+}
+
+message CreateRequest {
+  int64 user_id = 1;
+  string uuid = 2;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package bank;
+
+
+option go_package = "frgaed.bank.v1";
+
+service Bank {
+  rpc RequestForPaymentProcessing(RFPPRequest) returns (RFPPResponse);
+  rpc RequestForPaymentStatus(RFPSRequest) returns (RFPSResponse);
+}
+
+message RFPPRequest {
+  string user_uuid = 1;
+  int64 amount =2;
+}
+
+message RFPPResponse {
+  string bank_uuid = 1;
+}
+
+message RFPSRequest {
+  string user_uuid = 1;
+  string bank_uuid =2;
+}
+
+message RFPSResponse {
+  int64 status = 1;
+}

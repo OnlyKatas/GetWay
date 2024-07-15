@@ -1,0 +1,12 @@
+local:
+  port: 50053
+  session_address: "session:50054"
+db:
+  host: "dbpay"
+  port: "5432"
+  username: "postgres"
+  password: "qwerty"
+  dbname: "postgres"
+  sslmode: "disable"
+  driver: "postgres"
+  timeout: 60s

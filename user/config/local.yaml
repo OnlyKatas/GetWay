@@ -1,0 +1,11 @@
+local:
+  port: 50052
+db:
+  host: "db"
+  port: "5432"
+  username: "postgres"
+  password: "qwerty"
+  dbname: "postgres"
+  sslmode: "disable"
+  driver: "postgres"
+  timeout: 60s

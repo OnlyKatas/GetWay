@@ -1,0 +1,13 @@
+version: '3'
+services:
+  session:
+    build: .
+    container_name: session
+    ports:
+      - "50054:50054"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    external: true

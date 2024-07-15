@@ -1,0 +1,13 @@
+local:
+  port: 50054
+pay:
+  address: "pay:50055"
+db:
+  host: "dbBANK"
+  port: "5432"
+  username: "postgres"
+  password: "qwerty"
+  dbname: "postgres"
+  sslmode: "disable"
+  driver: "postgres"
+  timeout: 60s

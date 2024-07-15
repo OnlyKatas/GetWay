@@ -1,0 +1,6 @@
+http_server:
+  port: ":8080"
+grpc:
+  auth_address: "auth:50051"
+  user_address: "user:50052"
+  payment_address: "pay:50053"
